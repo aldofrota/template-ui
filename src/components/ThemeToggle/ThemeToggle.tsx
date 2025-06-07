@@ -8,3 +8,5 @@ export const ThemeToggle: React.FC = () => {
     <button onClick={toggleTheme}>{theme === "light" ? "🌙" : "☀️"}</button>
   );
 };
+
+export default ThemeToggle;

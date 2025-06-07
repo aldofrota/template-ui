@@ -1,4 +1,4 @@
-const themeConfig = {
+const themeColors = {
   direction: "ltr",
   token: {
     authbgcolor: "rgb(239,242,247)",
@@ -231,4 +231,4 @@ const customStyle = {
   },
 };
 
-export { themeConfig, darkthemecolors, customStyle };
+export { themeColors, darkthemecolors, customStyle };
