@@ -7,6 +7,7 @@ const Login = React.lazy(() => import("@/features/auth/pages/Login"));
 const Dashboard = React.lazy(
   () => import("@/features/dashboard/pages/Dashboard")
 );
+const About = React.lazy(() => import("@/features/about/pages/About"));
 
 // Rotas públicas
 export const publicRoutes = [{ path: "/login", component: <Login /> }];
@@ -15,4 +16,5 @@ export const publicRoutes = [{ path: "/login", component: <Login /> }];
 export const authProtectedRoutes = [
   { path: "/", component: <Dashboard /> },
   { path: "/dashboard", component: <Dashboard /> },
+  { path: "/about", component: <About /> },
 ];

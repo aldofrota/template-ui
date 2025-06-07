@@ -1,5 +1,6 @@
 import React from "react";
 import { Layout as AntLayout } from "antd";
+import { Menu } from "@/components";
 const { Content } = AntLayout;
 
 interface LayoutProps {
@@ -9,8 +10,9 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <AntLayout style={{ minHeight: "100vh" }}>
-      <AntLayout>
-        <Content>{children}</Content>
+      <Menu />
+      <AntLayout style={{ flex: 1 }}>
+        <Content style={{ display: "flex" }}>{children}</Content>
       </AntLayout>
     </AntLayout>
   );
