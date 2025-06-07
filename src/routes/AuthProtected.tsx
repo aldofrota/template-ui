@@ -1,5 +1,6 @@
 import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
+import { useAuthStore } from "@/state/authStore";
 
 interface AuthProtectedProps {
   children: React.ReactNode;
@@ -7,7 +8,7 @@ interface AuthProtectedProps {
 
 const AuthProtected: React.FC<AuthProtectedProps> = ({ children }) => {
   const location = useLocation();
-  const isAuthenticated = localStorage.getItem("token"); // Você pode ajustar isso de acordo com sua lógica de autenticação
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
 
   if (!isAuthenticated) {
     return <Navigate to="/login" state={{ from: location }} replace />;

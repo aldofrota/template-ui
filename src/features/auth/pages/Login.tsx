@@ -1,17 +1,15 @@
 import React from "react";
 import { Form, Input, Button, Card, Typography } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import { useNavigate } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
 
 const { Title } = Typography;
 
 const Login: React.FC = () => {
-  const navigate = useNavigate();
+  const { login } = useAuth();
 
   const onFinish = (values: any) => {
-    console.log("Success:", values);
-    localStorage.setItem("token", "fake-token");
-    navigate("/dashboard");
+    login(values.email, values.password);
   };
 
   return (

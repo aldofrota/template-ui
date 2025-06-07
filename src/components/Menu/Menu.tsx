@@ -1,8 +1,8 @@
 import React from "react";
 import { ThemeToggle } from "@/components";
-import { Tabs } from "antd";
+import { Button, Tabs } from "antd";
 import { FcAbout } from "react-icons/fc";
-import { LuLayoutDashboard } from "react-icons/lu";
+import { LuLayoutDashboard, LuLogOut } from "react-icons/lu";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const items = [
@@ -45,6 +45,11 @@ const Menu: React.FC = () => {
       />
       <div className="p-2 rounded-md flex items-center justify-center">
         <ThemeToggle />
+      </div>
+      <div className="p-2 rounded-md flex items-center justify-center">
+        <Button onClick={() => navigate("/login")}>
+          <LuLogOut />
+        </Button>
       </div>
     </>
   );
